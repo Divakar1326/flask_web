@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 
 # Initialize the Flask app
@@ -10,4 +11,6 @@ def hello_world():
 
 # Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the PORT environment variable (default to 5000 if not set)
+    port = int(os.getenv("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
