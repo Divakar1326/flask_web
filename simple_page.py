@@ -12,7 +12,7 @@ def hello_world():
     <head>
         <style>
             body {
-                background-image: url('images/1.jpg'); /* Replace with your image URL */
+                background-image: url('/static/1.jpg'); /* Replace with your image URL */
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
