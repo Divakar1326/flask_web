@@ -6,7 +6,8 @@ from flask import Flask, request, render_template_string
 app = Flask(__name__)
 
 # Database connection details
-DB_URL = os.getenv("DATABASE_URL")  # Render provides this environment variable
+DB_URL = os.getenv("DATABASE_URL").replace("postgresql://", "postgres://")
+ # Render provides this environment variable
 
 # Create table if not exists
 def create_table():
