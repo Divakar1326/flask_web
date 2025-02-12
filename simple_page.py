@@ -11,7 +11,11 @@ print(f"Using Database URL: {DB_URL}")  # Temporary debug line
 
 def get_db_connection():
     try:
-        return psycopg2.connect(DB_URL, sslmode='require')
+        return psycopg2.connect(
+            DB_URL,
+            sslmode='require',
+            connect_timeout=30
+        )
     except Exception as e:
         print(f"Connection error: {e}")
         return None
