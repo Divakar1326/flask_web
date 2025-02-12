@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Database connection details
-DB_URL = os.getenv("DATABASE_URL").replace("postgresql://", "postgres://")
+DB_URL = os.getenv("DATABASE_URL")
  # Render provides this environment variable
 
 # Create table if not exists
