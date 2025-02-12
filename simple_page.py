@@ -30,7 +30,7 @@ def home():
     if request.method == 'POST':
         email = request.form.get('email')
         if email:
-            conn = psycopg2.connect(DB_URL)
+            conn = psycopg2.connect(DB_URL, sslmode="require")
             cur = conn.cursor()
             cur.execute("INSERT INTO users (email) VALUES (%s) ON CONFLICT DO NOTHING", (email,))
             conn.commit()
