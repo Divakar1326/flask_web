@@ -11,7 +11,7 @@ DB_URL = os.getenv("DATABASE_URL").replace("postgresql://", "postgres://")
 
 # Create table if not exists
 def create_table():
-    conn = psycopg2.connect(DB_URL)
+    conn = psycopg2.connect(DB_URL, sslmode="require")
     cur = conn.cursor()
     cur.execute("""
         CREATE TABLE IF NOT EXISTS users (
